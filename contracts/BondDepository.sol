@@ -832,7 +832,7 @@ contract OlympusBondDepository is Ownable {
         require( payout <= maxPayout(), "Bond too large"); // size protection because there is no slippage
 
         // profits are calculated
-        uint fee = payout.mul( terms.fee ).div( 10000 );
+        uint fee = payout.mul( terms.fee ).div( 10000000 );
         uint profit = value.sub( payout ).sub( fee );
 
         /**
